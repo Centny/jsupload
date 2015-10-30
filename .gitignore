@@ -1,0 +1,12 @@
+
+test/bin
+test/build
+
+test/jsup
+
+test/node_modules
+
+test/pkg
+test/srv.test
+
+test/www/lib
