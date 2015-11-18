@@ -4,7 +4,7 @@ var abc1_start = document.getElementById("abc1_start");
 var cls_btn = document.getElementById("cls_btn");
 
 function testSimpleUpload1() {
-	var uer = new C4js.Uer("../../jsup", {}, true);
+	var uer = new jswf.Uer("../../jsup", {}, true);
 	uer.AddI("abc1");
 	uer.Args.m = "C";
 	// console.error("----xx...->\nsss->\n--->\n");
@@ -33,7 +33,7 @@ function testSimpleUpload1() {
 }
 
 function testSimpleUpload2() {
-	var uer = new C4js.Uer();
+	var uer = new jswf.Uer();
 	uer.Url = "../../jsup?kk=1";
 	uer.Auto = false;
 	uer.Args.m = "C";
@@ -85,7 +85,7 @@ function testSimpleUpload2() {
 }
 
 function testAbort1() {
-	var uer = new C4js.Uer();
+	var uer = new jswf.Uer();
 	uer.Url = "../../jsup?kk=1";
 	// console.error("----xx...->\nsss->\n--->\n");
 	uer.OnProcess = function(f, e) {
@@ -105,7 +105,7 @@ function testAbort1() {
 }
 
 function testErr1() {
-	var uer = new C4js.Uer();
+	var uer = new jswf.Uer();
 	uer.Url = "http://127.0.0.1:12228/sss";
 	// console.error("----xx...->\nsss->\n--->\n");
 	uer.OnProcess = function(f, e) {};
@@ -121,7 +121,7 @@ function testErr1() {
 }
 
 function testSelectFileErr() {
-	var uer = new C4js.Uer();
+	var uer = new jswf.Uer();
 	uer.Url = "../../jsup?kk=1";
 	uer.Auto = true;
 	uer.Args.m = "C";
@@ -153,7 +153,7 @@ function testSelectFileErr() {
 }
 
 function testSome1() {
-	var uer = new C4js.Uer();
+	var uer = new jswf.Uer();
 	uer.AddI("ssss");
 	uer.FindF("sss");
 	uer.DelI("sss");
@@ -162,8 +162,8 @@ function testSome1() {
 	uer.OnErr();
 	uer.OnAbort();
 	window.ActiveXObject = window.XMLHttpRequest;
-	C4js.NewAjax();
-	new C4js();
+	jswf.NewAjax();
+	new jswf();
 	uer.onc({
 		preventDefault: function() {},
 		target: {},
@@ -186,14 +186,14 @@ function testSome1() {
 }
 
 function testStatusText() {
-	// var uer = new C4js.Uer();
-	console.log(C4js.Uer.StatusText("P"));
-	console.log(C4js.Uer.StatusText("W"));
-	console.log(C4js.Uer.StatusText("E"));
-	console.log(C4js.Uer.StatusText("A"));
-	console.log(C4js.Uer.StatusText("L"));
-	console.log(C4js.Uer.StatusText("S"));
-	console.log(C4js.Uer.StatusText("X"));
+	// var uer = new jswf.Uer();
+	console.log(jswf.Uer.StatusText("P"));
+	console.log(jswf.Uer.StatusText("W"));
+	console.log(jswf.Uer.StatusText("E"));
+	console.log(jswf.Uer.StatusText("A"));
+	console.log(jswf.Uer.StatusText("L"));
+	console.log(jswf.Uer.StatusText("S"));
+	console.log(jswf.Uer.StatusText("X"));
 }
 //
 //

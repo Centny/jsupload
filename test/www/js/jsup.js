@@ -1,25 +1,25 @@
 /*
  * @author Cny
  */
-var C4js = (function() {
-    function C4js() {}
+var jswf = (function() {
+    function jswf() {}
 
-    C4js.NewAjax = function() {
+    jswf.NewAjax = function() {
         if (window.ActiveXObject) {
             return new ActiveXObject("Msxml2.XMLHTTP");
         } else {
             return new XMLHttpRequest();
         }
     };
-    C4js.FSize = ["B", "KB", "MB", "GB", "TB"];
+    jswf.FSize = ["B", "KB", "MB", "GB", "TB"];
     //
-    C4js.fsize = function(bs) {
+    jswf.fsize = function(bs) {
         bsize = bs;
-        for (var i = 0; i < C4js.FSize.length; i++) {
+        for (var i = 0; i < jswf.FSize.length; i++) {
             if (bsize > 1024) {
                 bsize = bsize / 1024;
             } else {
-                return bsize.toFixed(1) + C4js.FSize[i];
+                return bsize.toFixed(1) + jswf.FSize[i];
             }
         }
     };
@@ -110,7 +110,7 @@ var C4js = (function() {
                     break;
             }
         }
-        cval.Speed = C4js.fsize(tspeed);
+        cval.Speed = jswf.fsize(tspeed);
         return cval;
     };
     Uer.prototype.sort = function() {
@@ -244,7 +244,7 @@ var C4js = (function() {
             return;
         }
         console.log("do uloop for file:" + f.name);
-        var xhr = C4js.NewAjax();
+        var xhr = jswf.NewAjax();
         var upload = xhr.upload;
         var uer = this;
         xhr.onreadystatechange = function() {
@@ -271,7 +271,7 @@ var C4js = (function() {
             }
             ntime = new Date().getTime() / 1000;
             f.speed = (e.loaded - f.preloaded) / (ntime - f.pretime);
-            speed = C4js.fsize(f.speed);
+            speed = jswf.fsize(f.speed);
             f.preloaded = e.loaded;
             f.pretime = ntime;
             uer.OnProcess(f, f.rate, speed, e);
@@ -364,7 +364,7 @@ var C4js = (function() {
     Uer.prototype.OnSelect = function(item, e) {
         return item.files;
     };
-    C4js.Uer = Uer;
-    window.C4js = C4js;
-    return C4js;
+    jswf.Uer = Uer;
+    window.jswf = jswf;
+    return jswf;
 })();
